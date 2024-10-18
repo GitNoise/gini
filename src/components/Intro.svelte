@@ -3,8 +3,6 @@
 
   export let src;
   export let title;
-  export let subtitle;
-  export let subtitle2;
   export let hide;
   export let show;
   export let isVisible = false;
@@ -71,29 +69,13 @@
     <h1>
       {title}
     </h1>
-
-    {#if subtitle}
-      <h2>
-        {subtitle}
-      </h2>
-    {/if}
-
-    {#if subtitle2}
-      <p class="article">
-        {subtitle2}
-      </p>
-    {/if}
-  </div>
-
+</div>
   <img bind:this={imgEl} {src} alt={title} />
-
-  <div class="hint">
-    <div>scroll down</div>
-    <div class="gg-chevron-down" />
-  </div>
+  <div class="hint text-small">scroll down</div>
 </div>
 
 <style>
+
   .slide.isVisible {
     opacity: 1;
   }
@@ -112,6 +94,16 @@
     align-items: center;
   }
 
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+
   .textcontainer {
     z-index: 1;
     display: flex;
@@ -128,30 +120,8 @@
     margin: 0 20 0 0;
     padding: 0;
     opacity: 0.7;
-  }
-
-  h3 {
-    margin: 0;
-    padding: 0;
-    -webkit-text-stroke-color: #d5f2f2;
-    line-height: normal;
-    opacity: 0.7;
-  }
-
-  .article {
-    hyphens: auto;
-    opacity: 0.9;
-    text-align: justify;
-  }
-
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: 50% 50%;
+    font-family:"Syncopate";
+    font-size: var(--font-size-xl);
   }
 
   .hint {
@@ -166,44 +136,4 @@
     opacity: 1;
   }
 
-  .hint > div {
-    margin-top: -6px;
-    font-size: var(--font-size-md);
-    font-weight: bold;
-  }
-
-  .gg-chevron-down {
-    transform: scale(1.8);
-    color: #d5f2f2;
-    box-sizing: border-box;
-    position: relative;
-    display: block;
-    width: 22px;
-    height: 22px;
-    border: 2px solid transparent;
-    border-radius: 100px;
-  }
-
-  .gg-chevron-down::after {
-    content: "";
-    display: block;
-    box-sizing: border-box;
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border-bottom: 1.5px solid;
-    border-right: 1.5px solid;
-    transform: rotate(45deg);
-    left: 4px;
-    top: 2px;
-  }
-
-  h1 {
-    font-family: var(--font-family-impact);
-    font-size: var(--font-size-xl);
-  }
-
-  h2 {
-    font-size: var(--font-size-lg);
-  }
 </style>

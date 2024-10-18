@@ -1,5 +1,5 @@
 <script>
-  import Scrolly from "$components/chartcomponents/Scrolly.svelte";
+  import Scrolly from "$components/story/Scrolly.svelte";
 
   export let storyscript = [];
   export let layout;
@@ -16,13 +16,11 @@
       const step = storyscript.steps[stepIndex];
       const { charts } = step;
 
-      // update components in step
       charts.forEach((chart) => {
         const component = chartComponents[chart.componentIndex];
         component.chart = chart;
       });
 
-      // reset component not in step
       const componentIndexs = step.charts.map((d) => d.componentIndex);
       chartComponents.forEach((component, i) => {
         if (!componentIndexs.includes(i)) {
@@ -66,7 +64,7 @@
                 <div class="content">
                   <h4>{step.description.title}</h4>
                   {#if step.description.text}
-                    <p>{@html step.description.text}</p>
+                    <p class = "text-medium">{@html step.description.text}</p>
                   {/if}
                 </div>
               </div>
@@ -157,6 +155,8 @@
 
   .contentwrapper {
     position: relative;
+    width: 70%;
+    margin: 0 auto;
     padding: 10px;
   }
 
@@ -180,9 +180,10 @@
     -webkit-text-stroke-color: #d5f2f2;
     -webkit-text-stroke-width: 0.9px;
     font-size: var(--font-size-lg);
-    font-family: var(--font-family-impact);
+    font-family: "Syncopate";
     text-transform: uppercase;
   }
+
 
   @media (min-width: 900px) {
     .fullWidth .container {

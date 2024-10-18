@@ -1,5 +1,5 @@
 import { group } from "d3";
-import MultilineChart from "$components/charts/LineChart/MultilineChart.svelte";
+import MultilineChart from "$components/charts/MultilineChart.svelte";
 import data from "$data/data_all.csv";
 
 const formattedData = data.map((d) => ({ ...d, value: +d.gini_pretaxes }));
@@ -46,7 +46,7 @@ export default {
             {
               y: 0,
               dy: -18,
-              text: "  >  Complete inequality",
+              text: "  =  Complete inequality",
             },
           ],
         },
@@ -83,7 +83,7 @@ export default {
             {
               y: 0,
               dy: -18,
-              text: "  >  Complete inequality",
+              text: "  =  Complete inequality",
             },
             {
               x: "2009",
@@ -153,7 +153,7 @@ export default {
             {
               y: 0,
               dy: -18,
-              text: "  >  Complete inequality",
+              text: "  =  Complete inequality",
             },
             {
               x: "2009",
@@ -223,7 +223,7 @@ export default {
             {
               y: 0,
               dy: -18,
-              text: "  >  Complete inequality",
+              text: "  =  Complete inequality",
             },
             {
               x: "2009",
@@ -293,7 +293,7 @@ export default {
             {
               y: 0,
               dy: -18,
-              text: "  >  Complete inequality",
+              text: "  =  Complete inequality",
             },
             {
               x: "2009",

@@ -2,46 +2,48 @@
 @import "reset.css";
 @import "fonts.css";
 
-:root {
-  --color-background: #020100ff;
-  --color-chart-axis: #b9d4d3;
+/* general */
+body {
+  margin: 0;
 }
 
-:root {
-  --z-bottom: -100;
-  --z-middle: 0;
-  --z-top: 100;
-  --z-overlay: 1000;
-  --border-radius: 2px;
-  --font-body: var(--serif);
-  --font-form: var(--sans);
-  --1s: 1ms;
+main {
+  display: block;
 }
 
+a {
+  color: #d5f2f2;
+}
 
-/* typography */
-:root {
-  /* fluid base */
-  --base-min-font-size: 0.75rem;
-  --base-max-font-size: 1.125rem;
-  --base-min-line-height: 1.125rem;
-  --base-max-line-height: 1.463rem;
+/* text */
+.text-big {
+  font-family: "Montserrat Alternates2", sans-serif;
+  hyphens: auto;
+  line-height: 1.15;
+  text-align: left;
+}
 
+.text-medium {
+  font-family: "Montserrat Alternates2", sans-serif;
+  font-size: var(--font-size-md);
+  line-height: 1.6;
+  hyphens: auto;
+  text-align: left;
+}
 
-  /* font families */
-  --font-family-impact: "Syncopate", sans-serif;
-  --font-family-base: "Montserrat Alternates", sans-serif;
-
-  /* font sizes */
-  --font-size-xl: 6rem;
-  --font-size-lg: 2rem;
-  --font-size-md: 1rem;
-  --font-size-sm: 0.8rem;
-  --font-size-xs: 0.7rem;
+.text-small {
+  font-family: "Montserrat Alternates1", sans-serif;
+  font-size: var(--font-size-sm);
+  margin-bottom: 4px;
+  line-height: 1.15;
+  hyphens: auto;
+  text-align: left;
 }
 
 /* colors */
 :root {
+  --color-background: #020100ff;
+  --color-chart-axis: #b9d4d3;
   --jordy-blue: #99b9f8ff;
   --cornflower-blue: #7190feff;
   --caribbean-current: #226566ff;
@@ -61,15 +63,32 @@
   --english-violet: #4a496aff;
 }
 
+/* typography */
+:root {
+  /* fluid base */
+  --base-min-font-size: 0.75rem;
+  --base-max-font-size: 1.125rem;
+  --base-min-line-height: 1.125rem;
+  --base-max-line-height: 1.463rem;
+  /* font sizes */
+  --font-size-xl: 6rem;
+  --font-size-lg: 2rem;
+  --font-size-md: 1rem;
+  --font-size-sm: 0.8rem;
+  --font-size-xs: 0.7rem;
+}
+
+:root {
+  --z-bottom: -100;
+  --z-middle: 0;
+  --z-top: 100;
+  --z-overlay: 1000;
+  --border-radius: 2px;
+  --1s: 1ms;
+}
+
 @media screen and (prefers-reduced-motion: no-preference) {
   :root {
     --1s: 1s;
   }
-}
-
-/* font */
-body {
-  font-family: var(--font-family-base);
-  font-size: clamp(var(--base-min-font-size), 0.693vw + 0.571rem, var(--base-max-font-size));
-  line-height: clamp(var(--base-min-font-size), 0.624vw + 0.964rem, var(--base-max-line-height));
 }
